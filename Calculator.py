@@ -149,3 +149,30 @@ circumference = calculate_circumference(area) # Вычисляем длину о
 print(f"Площадь круга: {area}")
 print(f"Радиус круга: {radius:.2f}")  # Выводим радиус с 2 знаками после запятой
 print(f"Длина окружности: {circumference:.2f}") # Выводим длину окружности с 2 знаками после запятой
+
+#4
+import datetime
+
+def get_day_of_week(day, month, year):
+    """
+    Calculates the day of the week for a given date.
+
+    Args:
+      day: Day of the month (integer).
+      month: Month of the year (integer).
+      year: Year (integer).
+
+    Returns:
+      A string representing the day of the week, or None if input is invalid
+    """
+    try:
+        date_obj = datetime.date(year, month, day)
+        day_of_week_int = date_obj.weekday()
+
+        days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        return days[day_of_week_int]
+    except ValueError:
+         return None  # Handle invalid date case
+
+# Примеры использования:
+date1 = (9, 5, 1945)  # 9 мая 1945
