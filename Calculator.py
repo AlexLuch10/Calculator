@@ -132,3 +132,22 @@ else:
   res2 = sum(sum2) / len(sum2)  
 
 #среднее арифметическое / n
+
+#3
+import math
+
+# Лямбда-функция для вычисления радиуса по площади
+calculate_radius = lambda area: math.sqrt(area / math.pi)
+
+# Лямбда-функция для вычисления длины окружности по площади
+calculate_circumference = lambda area: 2 * math.pi * math.sqrt(area / math.pi)
+
+# Примеры использования:
+area = 25 # Площадь круга
+
+radius = calculate_radius(area) # Вычисляем радиус
+circumference = calculate_circumference(area) # Вычисляем длину окружности
+
+print(f"Площадь круга: {area}")
+print(f"Радиус круга: {radius:.2f}")  # Выводим радиус с 2 знаками после запятой
+print(f"Длина окружности: {circumference:.2f}") # Выводим длину окружности с 2 знаками после запятой
