@@ -76,3 +76,59 @@ def calculator(str_main):
 
 str_main = input()
 print(calculator(str_main))
+
+# 1
+def st_words(filename):
+  """
+
+  """
+  with open(filename, 'r') as file:
+    text = file.read().lower()
+    for el in text:
+      if el.isalpha() == False:
+        text = text.replace(el, ' ')
+
+    text = text.split()
+
+    for el in text:
+      if el.isalpha() == False:
+        text.remove(el)
+
+    dic = {key: text.count(key) for key in text}
+    lst = [(val, key) for key, val in dic.items()]
+    
+
+  with open(filename + '_new', 'w') as file2:
+    try:  
+      while True:   
+        maxx = max(lst)
+        file2.write(f'Слово {maxx[1]}, кличество повторений этого слова {maxx[0]}\n')
+        lst.remove(max(lst))
+    except ValueError:
+      print('Конец')  
+
+
+print(st_words(input('Введите имя файла: ')))
+
+# 2
+import random
+n = int(input('Введите размер мматрицы NxN: '))
+matrix = [[random.randint(-100, 100) for _ in range(n)] for _ in range(n)]
+print(matrix)
+
+sum1, sum2 = [], []
+for ind in range(n):
+  if matrix[ind][ind] > 0: sum1.append(matrix[ind][ind])
+  if matrix[ind][ind] < 0: sum2.append(matrix[ind][-ind-1])
+
+if len(sum1) == 0:
+  res1 = 0
+else:
+  res1 = sum(sum1) / len(sum1)
+
+if len(sum2) == 0:
+  res2 = 0
+else:
+  res2 = sum(sum2) / len(sum2)  
+
+#среднее арифметическое / n
