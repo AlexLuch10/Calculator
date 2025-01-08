@@ -131,8 +131,6 @@ if len(sum2) == 0:
 else:
   res2 = sum(sum2) / len(sum2)  
 
-#среднее арифметическое / n
-
 #3
 import math
 
