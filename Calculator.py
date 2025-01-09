@@ -131,7 +131,7 @@ if len(sum2) == 0:
 else:
   res2 = sum(sum2) / len(sum2)  
 
-#3
+#4
 import math
 
 # Лямбда-функция для вычисления радиуса по площади
@@ -150,7 +150,7 @@ print(f"Площадь круга: {area}")
 print(f"Радиус круга: {radius:.2f}")  # Выводим радиус с 2 знаками после запятой
 print(f"Длина окружности: {circumference:.2f}") # Выводим длину окружности с 2 знаками после запятой
 
-#4
+#6
 import datetime
 
 def get_day_of_week(day, month, year):
@@ -172,7 +172,35 @@ def get_day_of_week(day, month, year):
         days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         return days[day_of_week_int]
     except ValueError:
+  
          return None  # Handle invalid date case
 
 # Примеры использования:
 date1 = (9, 5, 1945)  # 9 мая 1945
+
+#8
+import math
+x = float(input("Введите x: "))
+summ = 0
+for n in range(0, 5):
+    summ += ((-1)**(n))*((x**(2*n))/(math.factorial(2*n)))
+print(summ)
+
+
+#9
+import math
+x = [-math.pi + ((math.pi*2)/500)*num for num in range(501)]
+print(x[0], x[-1])
+for element in x:
+    print(f"x = {element} y1 = 2sinx = {2*math.sin(element)}  y2 = cos2x = {math.cos(2*element)}")
+
+
+#14
+lst = [[1,2], [3,4,4,3,1], [4,1,4,5]] 
+for el in lst:
+  if len(el) > 3:
+    sum_del = sum(el[3:])
+    el[2] += sum_del
+    del el[3:]
+
+print(lst)    
