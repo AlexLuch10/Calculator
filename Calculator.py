@@ -215,3 +215,29 @@ for el in strrus2:
 for el in strrus2:
   dic[el[-1]] += 1  
 dic
+
+
+#23
+def repl(input_string, **kwargs):
+    """
+    Replaces words in a string matching parameter names with their values.
+
+    Args:
+        input_string: The input string (string).
+        **kwargs: Keyword arguments representing parameter names and their values.
+
+    Returns:
+        The modified string with replaced words, or None if input is invalid.
+    """
+ 
+    words = input_string.split()
+    result = []
+    for word in words:
+      if word in kwargs:
+         result.append(str(kwargs[word]))
+      else:
+         result.append(word)
+    
+    return " ".join(result)
+
+print(repl('replace my val abc', my='s1', abc='fff'))    
