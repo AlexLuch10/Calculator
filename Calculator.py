@@ -204,3 +204,14 @@ for el in lst:
     del el[3:]
 
 print(lst)    
+
+#15
+strrus1 = 'ДОРОГОЙ    ГДЕ ТЫ   БЫЛ   БЕГАЛ       СТРАННО НО ТВОЯ ФУТБОЛКА СУХАЯ'
+strrus2 = strrus1.lower().split()
+dic = {}
+for el in strrus2:
+  dic[el[-1]] = 0
+
+for el in strrus2:
+  dic[el[-1]] += 1  
+dic
